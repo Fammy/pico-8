@@ -1,6 +1,6 @@
 # pico-8
 Small games using PICO-8
 
-Nothing special to see. So far, the games are
+These are all works-in-progress. Click the game name to play in your browser!
 
-* [Ark](ark.html) - An Arkanoid-esque game
+* [Ark](https://fammy.github.io/pico-8/ark.html) - An Arkanoid-esque game
