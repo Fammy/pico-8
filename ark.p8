@@ -3,8 +3,8 @@ version 16
 __lua__
 
 function _init()
-    min_x = 1
-    max_x = 127
+    min_x = 0
+    max_x = 128
     min_y = 7
     max_y = 128
     
@@ -27,7 +27,7 @@ function _init()
     ball.spr = 2 
     ball.w = 4
     ball.h = 4
-    ball.inertia = .5
+    ball.inertia = 2
     new_ball()
 
     sounds = {}
@@ -45,7 +45,7 @@ end
 
 function _draw()
     cls(color.black)
-    rect(0, 6, 127, 128, color.dark_gray)
+    rect(0, 6, 127, 6, color.dark_gray)
     draw_ball()
     draw_player()
     draw_score()
@@ -89,11 +89,8 @@ function _update()
         ball.dy = abs(ball.dy)
         sfx(sounds.bounce)
     end
-    --if (ball.y > player.y) then ball.dy = -abs(ball.dy) end
-    
     if ball.y + ball.h >= player.y then
         if (ball.x + ball.w >= player.x) and (ball.x < player.x + player.w) then
-        --if (ball.x >= player.x and ball.x <= player.x + player.w) or (ball.x + ball.w >= player.x and ball.x + ball.w <= player.x + player.w) then
             ball.dy = -abs(ball.dy)
             sfx(sounds.hit)
             score += 1
